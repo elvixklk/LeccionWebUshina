@@ -61,7 +61,35 @@
             border-top: 1px solid #ddd;
         }
         
-        /* Responsividad para márgenes y padding */
+        /* Estilos para imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        
+        /* Estilos para video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        /* Responsividad */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -84,9 +112,17 @@
             p {
                 margin-bottom: 12px;
             }
+            
+            img {
+                margin: 15px auto;
+            }
+            
+            .video-container {
+                margin: 15px 0;
+            }
         }
         
-        /* Los estilos de imágenes y botones se agregarán en siguientes commits */
+        /* Los estilos de botones se agregarán en el siguiente commit */
     </style>
 </head>
 <body>
