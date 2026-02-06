@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lionel Messi - Página Tributo</title>
+    <!-- Los estilos se agregarán en los siguientes commits -->
+</head>
+<body>
+    <div class="container">
+        <h1>Lionel Andrés Messi</h1>
+        
+        <p>Lionel Messi es considerado por muchos como el mejor futbolista de todos los tiempos. Nacido en Rosario, Argentina, el 24 de junio de 1987, ha ganado 7 Balones de Oro y llevó a Argentina a ganar la Copa del Mundo 2022.</p>
+        
+        <!-- La imagen se agregará en commit posterior -->
+        <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Lionel Messi" width="800">
+        
+        <h2>Trayectoria</h2>
+        <p>Messi comenzó su carrera en las divisiones inferiores del FC Barcelona, debutando con el primer equipo en 2004. Durante 17 años en el Barcelona, ganó 35 títulos, incluyendo 4 Champions League y 10 Ligas españolas.</p>
+        
+        <h2>Mejores Jugadas</h2>
+        <p>Aquí puedes ver un video con algunas de las mejores jugadas de Messi:</p>
+        
+        <!-- El video container se agregará en commit posterior -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/eeoQ6iVX6MA" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Estadísticas Destacadas</h2>
+        <p>• 7 Balones de Oro (récord histórico)</p>
+        <p>• 834 goles en su carrera</p>
+        <p>• 35 títulos oficiales</p>
+        <p>• Máximo goleador del Barcelona (672 goles)</p>
+        <p>• Campeón del Mundo con Argentina (2022)</p>
+        
+        <!-- Los botones se agregarán en commit posterior -->
+        <div class="buttons">
+            <a href="https://es.wikipedia.org/wiki/Lionel_Messi" class="btn" target="_blank">Más información en Wikipedia</a>
+            <a href="https://www.youtube.com/results?search_query=messi+best+goals" class="btn btn-secondary" target="_blank">Ver más goles en YouTube</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Página tributo a Lionel Messi - Todos los derechos de imágenes y videos pertenecen a sus respectivos dueños</p>
+        <p>© 2023 - Página web de ejemplo</p>
+    </footer>
+</body>
+</html>
