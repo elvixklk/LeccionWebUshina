@@ -4,7 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lionel Messi - Página Tributo</title>
-    <!-- Los estilos se agregarán en los siguientes commits -->
+    <style>
+        /* Estilos básicos de texto y tipografía */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #1a237e;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #1a237e;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 1rem;
+        }
+        
+        footer {
+            color: #666;
+        }
+        
+        /* Responsividad para texto */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Los estilos de layout, márgenes, imágenes y botones se agregarán en siguientes commits */
+    </style>
 </head>
 <body>
     <div class="container">
@@ -12,7 +53,6 @@
         
         <p>Lionel Messi es considerado por muchos como el mejor futbolista de todos los tiempos. Nacido en Rosario, Argentina, el 24 de junio de 1987, ha ganado 7 Balones de Oro y llevó a Argentina a ganar la Copa del Mundo 2022.</p>
         
-        <!-- La imagen se agregará en commit posterior -->
         <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Lionel Messi" width="800">
         
         <h2>Trayectoria</h2>
@@ -21,7 +61,6 @@
         <h2>Mejores Jugadas</h2>
         <p>Aquí puedes ver un video con algunas de las mejores jugadas de Messi:</p>
         
-        <!-- El video container se agregará en commit posterior -->
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/eeoQ6iVX6MA" allowfullscreen></iframe>
         </div>
@@ -33,7 +72,6 @@
         <p>• Máximo goleador del Barcelona (672 goles)</p>
         <p>• Campeón del Mundo con Argentina (2022)</p>
         
-        <!-- Los botones se agregarán en commit posterior -->
         <div class="buttons">
             <a href="https://es.wikipedia.org/wiki/Lionel_Messi" class="btn" target="_blank">Más información en Wikipedia</a>
             <a href="https://www.youtube.com/results?search_query=messi+best+goals" class="btn btn-secondary" target="_blank">Ver más goles en YouTube</a>
