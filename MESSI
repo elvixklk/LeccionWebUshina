@@ -3,211 +3,577 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lionel Messi - Página Tributo</title>
+    <title>Lionel Messi - El Mejor del Mundo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset y box model */
+        :root {
+            --primary-color: #0c4b86;
+            --secondary-color: #f8c300;
+            --accent-color: #d62828;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --font-main: 'Montserrat', sans-serif;
+            --font-text: 'Open Sans', sans-serif;
+            --base-font-size: 16px;
+            --spacing-unit: 1rem;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        /* Estilos de texto y tipografía */
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--font-text);
+            font-size: var(--base-font-size);
             line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            padding-bottom: 3rem;
         }
         
-        h1 {
-            font-size: 2.5rem;
-            color: #1a237e;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header y Navegación */
+        header {
+            background-color: var(--primary-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-family: var(--font-main);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(12, 75, 134, 0.8), rgba(12, 75, 134, 0.9)), url('https://images.unsplash.com/photo-1598366839051-8d4ca7f7514f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
             text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #ffab00;
+            margin-bottom: 3rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-main);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.8em 1.8em;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: #e6b400;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Secciones generales */
+        section {
+            margin-bottom: 4rem;
         }
         
         h2 {
-            font-size: 1.8rem;
-            color: #1a237e;
-            font-weight: bold;
-            margin: 25px 0 15px;
+            font-family: var(--font-main);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
         }
         
-        p {
-            font-size: 1rem;
-            margin-bottom: 15px;
+        .section-intro {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
         }
         
-        /* Layout y contenedores */
-        .container {
+        /* Carrera */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .career-card {
             background-color: white;
-            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
         
-        footer {
-            color: #666;
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+        .career-card:hover {
+            transform: translateY(-10px);
         }
         
-        /* Estilos para imágenes */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
+        .career-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .career-content {
+            padding: 1.5rem;
+        }
+        
+        .career-content h3 {
+            font-family: var(--font-main);
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Logros */
+        .achievements {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 10px;
+        }
+        
+        .achievements h2 {
+            color: white;
+            border-bottom-color: var(--secondary-color);
+        }
+        
+        .achievement-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .achievement-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
             border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s;
         }
         
-        /* Estilos para video container */
+        .achievement-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Video */
         .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .video-wrapper {
+            width: 100%;
+            max-width: 800px;
             position: relative;
             padding-bottom: 56.25%; /* Relación 16:9 */
             height: 0;
-            margin: 20px 0;
             overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
-        .video-container iframe {
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* Galería */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
             border-radius: 8px;
+            overflow: hidden;
+            height: 220px;
         }
         
-        /* Estilos para botones */
-        .buttons {
-            display: flex;
-            gap: 15px;
-            margin: 25px 0;
-            flex-wrap: wrap;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
         
-        .btn {
-            padding: 12px 24px;
-            background-color: #1a237e;
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
+            padding: 2.5rem 0;
             text-align: center;
-            transition: background-color 0.3s ease;
+            margin-top: 3rem;
         }
         
-        .btn:hover {
-            background-color: #0d1b6b;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
         
-        .btn-secondary {
-            background-color: #ffab00;
-            color: #333;
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
         }
         
-        .btn-secondary:hover {
-            background-color: #e69c00;
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
         }
         
-        /* Responsividad */
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 15px;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
             h2 {
-                font-size: 1.5rem;
-                margin: 20px 0 10px;
+                font-size: 2rem;
             }
             
-            p {
-                margin-bottom: 12px;
+            .nav-links {
+                display: none;
             }
             
-            img {
-                margin: 15px auto;
-            }
-            
-            .video-container {
-                margin: 15px 0;
-            }
-            
-            .buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .btn {
-                width: 100%;
+            .hero {
+                padding: 3rem 0;
             }
         }
         
         @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
             .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+                display: block;
+                margin: 0.5rem auto;
+                width: 80%;
+                max-width: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Lionel Andrés Messi</h1>
-        
-        <p>Lionel Messi es considerado por muchos como el mejor futbolista de todos los tiempos. Nacido en Rosario, Argentina, el 24 de junio de 1987, ha ganado 7 Balones de Oro y llevó a Argentina a ganar la Copa del Mundo 2022.</p>
-        
-        <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Lionel Messi" width="800">
-        
-        <h2>Trayectoria</h2>
-        <p>Messi comenzó su carrera en las divisiones inferiores del FC Barcelona, debutando con el primer equipo en 2004. Durante 17 años en el Barcelona, ganó 35 títulos, incluyendo 4 Champions League y 10 Ligas españolas.</p>
-        
-        <h2>Mejores Jugadas</h2>
-        <p>Aquí puedes ver un video con algunas de las mejores jugadas de Messi:</p>
-        
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/eeoQ6iVX6MA" allowfullscreen></iframe>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-futbol"></i>
+                    <div>Lionel <span>Messi</span></div>
+                </div>
+                <div class="nav-links">
+                    <a href="#carrera">Carrera</a>
+                    <a href="#logros">Logros</a>
+                    <a href="#video">Video</a>
+                    <a href="#galeria">Galería</a>
+                </div>
+            </nav>
         </div>
-        
-        <h2>Estadísticas Destacadas</h2>
-        <p>• 7 Balones de Oro (récord histórico)</p>
-        <p>• 834 goles en su carrera</p>
-        <p>• 35 títulos oficiales</p>
-        <p>• Máximo goleador del Barcelona (672 goles)</p>
-        <p>• Campeón del Mundo con Argentina (2022)</p>
-        
-        <div class="buttons">
-            <a href="https://es.wikipedia.org/wiki/Lionel_Messi" class="btn" target="_blank">Más información en Wikipedia</a>
-            <a href="https://www.youtube.com/results?search_query=messi+best+goals" class="btn btn-secondary" target="_blank">Ver más goles en YouTube</a>
-        </div>
-    </div>
-    
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Lionel Andrés Messi</h1>
+            <p>Considerado por muchos como el mejor futbolista de todos los tiempos. Ganador de 8 Balones de Oro y campeón del mundo con Argentina en 2022.</p>
+            <div class="hero-buttons">
+                <a href="#video" class="btn">Ver Mejores Jugadas</a>
+                <a href="#logros" class="btn btn-secondary">Ver Logros</a>
+            </div>
+        </section>
+
+        <section id="carrera">
+            <h2>Carrera Deportiva</h2>
+            <p class="section-intro">A lo largo de su carrera, Messi ha jugado para algunos de los clubes más importantes del mundo, dejando una huella imborrable en cada uno de ellos.</p>
+            
+            <div class="career-grid">
+                <div class="career-card">
+                    <img src="messi.bfc.jpg" alt="Messi en el FC Barcelona" class="career-img">
+                    <div class="career-content">
+                        <h3>FC Barcelona (2004-2021)</h3>
+                        <p>Messi debutó con el primer equipo del Barcelona a los 17 años. En sus 17 temporadas, ganó 10 Ligas Españolas, 4 Champions League y 7 Copas del Rey, entre otros títulos. Marcó 672 goles en 778 partidos.</p>
+                    </div>
+                </div>
+                
+                <div class="career-card">
+                    <img src="messi.psg.jpg" alt="Messi en el PSG" class="career-img">
+                    <div class="career-content">
+                        <h3>Paris Saint-Germain (2021-2023)</h3>
+                        <p>Después de su salida del Barcelona, Messi fichó por el PSG. En dos temporadas, ganó 2 Ligas Francesas y se convirtió en un jugador clave para el equipo parisino, aportando goles y asistencias.</p>
+                    </div>
+                </div>
+                
+                <div class="career-card">
+                    <img src="messi.mia.jpg" alt="Messi en el Inter Miami" class="career-img">
+                    <div class="career-content">
+                        <h3>Inter Miami (2023-presente)</h3>
+                        <p>En 2023, Messi se unió al Inter Miami de la MLS, llevando su magia al fútbol norteamericano. Rápidamente se convirtió en el líder del equipo, ganando la Leagues Cup en su primera temporada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="logros" class="achievements">
+            <h2>Logros y Premios</h2>
+            <p class="section-intro">A lo largo de su carrera, Messi ha acumulado una cantidad impresionante de premios individuales y colectivos que respaldan su condición de leyenda.</p>
+            
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>8 Balones de Oro</h3>
+                    <p>Récord absoluto del premio al mejor jugador del mundo (2009, 2010, 2011, 2012, 2015, 2019, 2021, 2023).</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Copa del Mundo 2022</h3>
+                    <p>Capitán y figura de la selección argentina que ganó el Mundial de Qatar 2022, coronando su carrera.</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Máximo Goleador Histórico</h3>
+                    <p>Récord de más goles en un año calendario (91 goles en 2012) y máximo goleador del Barcelona.</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>6 Botas de Oro</h3>
+                    <p>Premio al máximo goleador de las ligas europeas en seis temporadas diferentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Mejores Jugadas</h2>
+            <p class="section-intro">Disfruta de un compilado con las mejores jugadas y goles de Lionel Messi a lo largo de su extraordinaria carrera.</p>
+            
+            <div class="video-container">
+                <p>Video oficial de YouTube con las mejores jugadas de Messi</p>
+                <a href="https://www.youtube.com/watch?v=kqphejRKaU0&pp=ygUFbWVzc2k%3D" target="_blank" class="btn">Ver en YouTube</a>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>Galería de Imágenes</h2>
+            <p class="section-intro">Algunos de los momentos más icónicos de la carrera de Lionel Messi.</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="messi.gol.jpg" alt="Messi celebrando un gol">
+                </div>
+                <div class="gallery-item">
+                    <img src="messi.arg.jpg" alt="Messi con la copa del mundo">
+                </div>
+                <div class="gallery-item">
+                    <img src="messi.ju.jpg" alt="Messi en acción">
+                </div>
+                <div class="gallery-item">
+                    <img src="messi.cami.jpg" alt="Messi con la camiseta de Argentina">
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>Página tributo a Lionel Messi - Todos los derechos de imágenes y videos pertenecen a sus respectivos dueños</p>
-        <p>© 2023 - Página web de ejemplo</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-futbol"></i>
+                    <div>Lionel <span>Messi</span></div>
+                </div>
+                <p>Página de tributo creada con HTML, CSS y JavaScript</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p>© 2023 Página sobre Lionel Messi. Todos los derechos reservados a sus respectivos dueños.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Funcionalidad para los botones
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll para los enlaces de navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Efecto interactivo para las tarjetas de logros
+            const achievementItems = document.querySelectorAll('.achievement-item');
+            achievementItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Botón para mostrar/ocultar información adicional
+            const moreInfoBtn = document.createElement('button');
+            moreInfoBtn.className = 'btn';
+            moreInfoBtn.textContent = 'Mostrar Más Información';
+            moreInfoBtn.style.marginTop = '1rem';
+            moreInfoBtn.style.display = 'block';
+            moreInfoBtn.style.marginLeft = 'auto';
+            moreInfoBtn.style.marginRight = 'auto';
+            
+            const heroSection = document.querySelector('.hero');
+            heroSection.appendChild(moreInfoBtn);
+            
+            let infoVisible = false;
+            const extraInfo = document.createElement('div');
+            extraInfo.innerHTML = `
+                <div style="background-color: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px; margin-top: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem;">Datos Curiosos</h3>
+                    <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                        <li>Messi debutó en el FC Barcelona a los 17 años.</li>
+                        <li>Ha ganado más Balones de Oro que cualquier otro jugador en la historia.</li>
+                        <li>Es el máximo goleador de la historia de La Liga.</li>
+                        <li>En 2012, marcó 91 goles en un año calendario, un récord mundial.</li>
+                    </ul>
+                </div>
+            `;
+            extraInfo.style.display = 'none';
+            heroSection.appendChild(extraInfo);
+            
+            moreInfoBtn.addEventListener('click', function() {
+                if(infoVisible) {
+                    extraInfo.style.display = 'none';
+                    moreInfoBtn.textContent = 'Mostrar Más Información';
+                } else {
+                    extraInfo.style.display = 'block';
+                    moreInfoBtn.textContent = 'Ocultar Información';
+                }
+                infoVisible = !infoVisible;
+            });
+        });
+    </script>
 </body>
 </html>
